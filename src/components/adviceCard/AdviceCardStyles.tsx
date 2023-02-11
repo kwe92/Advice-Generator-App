@@ -33,8 +33,8 @@ const DividerImage = styled.img`
 const Dice = styled.img`
   background: orange;
   position: absolute;
-  bottom: 0;
   left: 50;
+  margin-top: 29rem;
 `;
 
 const TopSection = styled(Row)`
