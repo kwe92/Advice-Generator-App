@@ -11,3 +11,13 @@ interface ThemeInterface {
     fontSize: "28px"
 };
 
+interface Quote {
+    id: number,
+    advice: string
+}
+interface QuoteInterface {
+    data: {
+        slip: Quote
+    }
+};
+
