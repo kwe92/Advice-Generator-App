@@ -4,6 +4,8 @@ import { Row, Column } from "../../constants/styling/layout/Flex";
 const MainContainer = styled(Column)`
     position: relative;
     width 36rem;
+    height: 22rem;
+
     background: ${({ theme }: { theme: ThemeInterface }) =>
       theme.darkGreyishBlueColor};
     align-items: center;
@@ -31,10 +33,26 @@ const DividerImage = styled.img`
 `;
 
 const Dice = styled.img`
-  background: orange;
+  background: ${({ theme }: { theme: ThemeInterface }) => theme.neonGreenColor};
+  width: 1.5rem;
+  height: 1.5rem;
+`;
+
+const DiceContainer = styled(Row)`
+  align-items: center;
+  justify-content: center;
   position: absolute;
+  width: 3.75rem;
+  height: 3.75rem;
   left: 50;
-  margin-top: 29rem;
+  margin-top: 22.75rem;
+  border-radius: 50%;
+  background: ${({ theme }: { theme: ThemeInterface }) => theme.neonGreenColor};
+
+  &: hover {
+    box-shadow: 0 0 2rem
+      ${({ theme }: { theme: ThemeInterface }) => theme.neonGreenColor};
+  }
 `;
 
 const TopSection = styled(Row)`
@@ -53,4 +71,5 @@ export {
   TopSection,
   QuotesSection,
   Dice,
+  DiceContainer,
 };
