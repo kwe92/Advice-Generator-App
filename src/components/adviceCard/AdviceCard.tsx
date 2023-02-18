@@ -21,7 +21,7 @@ const AdviceCard = (props: {}) => {
         <TopContent>Advice</TopContent>
         <TopContent>{`#${quote.id}`}</TopContent>
       </TopSection>
-      <Quote>{quote.advice}</Quote>
+      <Quote>{`"${quote.advice}"`}</Quote>
 
       <DividerImage src={images.dividerDesktop} alt="divider-image" />
       <DiceContainer
