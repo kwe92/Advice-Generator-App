@@ -7,9 +7,21 @@ import Theme from "./constants/styling/theme/Theme";
 const App = (props: {}) => {
   // const { quote, handleFetch } = useFetch();
   return (
-    <AppContainer>
-      <AdviceCard />
-    </AppContainer>
+    <>
+      <AppContainer>
+        <AdviceCard />
+      </AppContainer>
+      <p
+        style={{
+          textAlign: "center",
+          paddingBottom: "2rem",
+          color: "white",
+          fontSize: "0.75rem",
+        }}
+      >
+        Developed By: Kweayon Clark
+      </p>
+    </>
   );
 };
 

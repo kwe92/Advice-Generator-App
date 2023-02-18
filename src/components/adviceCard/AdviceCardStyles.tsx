@@ -13,6 +13,10 @@ const MainContainer = styled(Column)`
 
     border-radius: 1rem;
 
+    @media screen and (max-width: 450px){
+      margin: 0 1rem;
+    }
+
 `;
 
 const TopContent = styled.p`
