@@ -12,7 +12,7 @@ interface ThemeInterface {
 };
 
 interface Advice {
-    id: number,
+    id: string,
     advice: string
 }
 interface AdviceInterface {

@@ -2,15 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 const useFetch = (refresh: string[]) => {
   const endpoint = "https://api.adviceslip.com/advice";
-  const [quote, setQuote] = useState({
-    id: 0,
-    advice: "",
-  });
+  const [advice, setAdvice] = useState(initAdvice);
 
   const handleFetch = (reponse: AdviceInterface) => {
     console.log("endpoint data from useFetch", reponse.data.slip);
-    const quoteObject = reponse.data.slip;
-    setQuote(quoteObject);
+    const adviceObject = reponse.data.slip;
+    setAdvice(adviceObject);
   };
 
   useEffect(() => {
@@ -18,7 +15,12 @@ const useFetch = (refresh: string[]) => {
       handleFetch(reponse);
     });
   }, [refresh]);
-  return { quote: quote, handleFetch: handleFetch };
+  return { advice: advice, handleFetch: handleFetch };
+};
+
+const initAdvice = {
+  id: "",
+  advice: "",
 };
 
 export default useFetch;
