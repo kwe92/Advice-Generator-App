@@ -7,7 +7,7 @@ const useFetch = (refresh: string[]) => {
     advice: "",
   });
 
-  const handleFetch = (reponse: QuoteInterface) => {
+  const handleFetch = (reponse: AdviceInterface) => {
     console.log("endpoint data from useFetch", reponse.data.slip);
     const quoteObject = reponse.data.slip;
     setQuote(quoteObject);

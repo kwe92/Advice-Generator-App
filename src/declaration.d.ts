@@ -11,13 +11,13 @@ interface ThemeInterface {
     fontSize: "28px"
 };
 
-interface Quote {
+interface Advice {
     id: number,
     advice: string
 }
-interface QuoteInterface {
+interface AdviceInterface {
     data: {
-        slip: Quote
+        slip: Advice
     }
 };
 
