@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite";
 import React, { useState } from "react";
 import useFetch from "../../constants/custom_hooks/useFetch";
 import images from "../../constants/images/images";
@@ -11,29 +12,42 @@ import {
   DiceContainer,
 } from "./AdviceCardStyles";
 
-const AdviceCard = (props: {}) => {
+import AdviceStore from "../../models/advice/AdviceModel";
+
+const store = AdviceStore.create({});
+const initAdvice = {
+  id: "",
+  advice: "",
+};
+store.addAdvice(initAdvice);
+store.fetchAdvice();
+
+const AdviceCard = observer((props: {}) => {
   const [refresh, setRefresh] = useState([""]);
-  const { quote, handleFetch } = useFetch(refresh);
+  const { advice, handleFetch } = useFetch(refresh);
 
   return (
     <MainContainer>
       <TopSection>
         <TopContent>Advice</TopContent>
-        <TopContent>{`#${quote.id}`}</TopContent>
+        {/* <TopContent>{`#${advice.id}`}</TopContent> */}
+        <TopContent>{`#${store.advice.values().next().value.id}`}</TopContent>
       </TopSection>
-      <Quote>{`"${quote.advice}"`}</Quote>
+      {/* <Quote>{`"${advice.advice}"`}</Quote> */}
+      <Quote>{`"${store.advice.values().next().value.advice}"`}</Quote>
 
       <DividerImage src={images.dividerDesktop} alt="divider-image" />
       <DiceContainer
         onClick={() => {
           console.log("I HAVE BEEN TOUCHED");
-          setRefresh([]);
+          // setRefresh([]);
+          store.fetchAdvice();
         }}
       >
         <Dice src={images.dice} alt="dice" />
       </DiceContainer>
     </MainContainer>
   );
-};
+});
 
 export default AdviceCard;
