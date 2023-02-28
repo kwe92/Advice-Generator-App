@@ -30,6 +30,8 @@ Users should be able to:
 
 ### Screenshot
 
+<img width="1440" alt="Screenshot 2023-02-26 at 12 05 59 AM" src="https://user-images.githubusercontent.com/47009536/221395170-4d31aa08-3fe9-4bf0-9c5b-f4d38f34a571.png">
+
 ### Links
 
 - Solution URL:

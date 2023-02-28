@@ -56,11 +56,4 @@ const AdviceStore = types
 
 const store = AdviceStore.create({});
 
-const fetchData = async () => {
-  await store.fetchAdvice();
-  console.log("Store Values: ", store.advice.values().next());
-};
-
-fetchData();
-
 export default AdviceStore;

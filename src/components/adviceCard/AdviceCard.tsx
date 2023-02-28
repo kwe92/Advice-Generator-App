@@ -23,9 +23,6 @@ store.addAdvice(initAdvice);
 store.fetchAdvice();
 
 const AdviceCard = observer((props: {}) => {
-  const [refresh, setRefresh] = useState([""]);
-  const { advice, handleFetch } = useFetch(refresh);
-
   return (
     <MainContainer>
       <TopSection>
